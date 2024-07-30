@@ -1,0 +1,20 @@
+export const Endpoints = {
+  JobPost: "/jobs",
+  UserLogin: "/users/login",
+  UserRegister: "/users/register",
+  VerifyOtp: "/users/verify-otp",
+  JobById: "/jobs/",
+  JobCreate: "/jobs",
+  AdminLogin: "/admin/login",
+  HRLogin: "/hr/login",
+  HRSignUp: "/hr/sign-up",
+  JobCategories: "/job-categories/",
+  HrRequest: "admin/send-invite",
+  Applicants: "/applicants",
+  ApplicantById: "/applicants/",
+  RejectApplicant: "/applicants/status/reject/",
+  ApproveApplicant: "/applicants/status/approve/",
+  HR: "/hr",
+  CurrentUser: "/current-user",
+  Interview: "/meeting"
+};
