@@ -83,7 +83,7 @@ const Sidebar = () => {
               >
                 All Jobs
               </Link>
-              <Link href={"jobs/postJob"} className={`px-4 py-3 flex gap-3 items-center font-medium border-b-4 w-full ${
+              <Link href={"/admin/jobs/postJob"} className={`px-4 py-3 flex gap-3 items-center font-medium border-b-4 w-full ${
                 pathname?.startsWith("/admin/jobs/postJob")
                   ? "border-green-500 text-[var(--secondary)]"
                   : "border-transparent"

@@ -1,5 +1,6 @@
 export const Endpoints = {
   JobPost: "/jobs",
+  User: "/users/",
   UserLogin: "/users/login",
   UserRegister: "/users/register",
   VerifyOtp: "/users/verify-otp",

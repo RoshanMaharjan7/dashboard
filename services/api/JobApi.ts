@@ -27,7 +27,6 @@ export const useGetJobById = (jobID: string) => {
   return useQuery<any>({
     queryKey: [jobID],
     queryFn: async (id: any):Promise<any> => {
-        console.log(id)
         const res = await  Axios.get(Endpoints.JobById+id.queryKey[0])
         console.log(res.data)
         return await res.data
@@ -93,7 +92,6 @@ export const useGetApplicantById = (applciantID: string) => {
   return useQuery<any>({
     queryKey: [applciantID],
     queryFn: async (id: any):Promise<any> => {
-        console.log(id)
         const res = await  Axios.get(Endpoints.ApplicantById+id.queryKey[0])
         console.log(res.data)
         return await res.data
@@ -174,3 +172,15 @@ export const useDeleteJob = () => {
 };
 
 
+// Fetch User By ID
+export const useGetUserById = (userID: string) => {
+  return useQuery<any>({
+    queryKey: [userID],
+    queryFn: async (id: any):Promise<any> => {
+        console.log(id)
+        const res = await  Axios.get(Endpoints.User+id.queryKey[0])
+        console.log(res.data)
+        return await res.data
+    },
+  });
+};

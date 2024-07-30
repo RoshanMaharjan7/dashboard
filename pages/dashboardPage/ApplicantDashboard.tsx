@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const ApplicantDashboard = ({ jobsData, applicantsData }: any) => {
+
   const getApplicantData = (jobID:string) => {
     const filteredData = applicantsData?.filter((applicant:any)=>applicant.jobId == jobID)
     const totalNumber = filteredData?.length
@@ -11,6 +12,7 @@ const ApplicantDashboard = ({ jobsData, applicantsData }: any) => {
 
     return {totalNumber: totalNumber, pendingNumber:pendingNumber, rejectedNumber: rejectedNumber }
   }
+
   return (
     <div className="flex col-span-3 gap-5">
       {/* data */}
@@ -27,22 +29,22 @@ const ApplicantDashboard = ({ jobsData, applicantsData }: any) => {
         {jobsData
           ?.reverse()
           .slice(0, 2)
-          .map(({ jobId, jobTitle }: { jobId: string; jobTitle: string }) => (
+          .map(({ _id, jobTitle }: { _id: string; jobTitle: string }) => (
             <div className="flex flex-col">
               <h4 className="text-[14px] font-semibold">{jobTitle}</h4>
               <div className="w-full flex bg-green-50 rounded-md p-4 space-x-4">
                 <span className="flex flex-col flex-grow">
-                  <h5 className="font-bold">{getApplicantData(jobId).totalNumber || 0}</h5>
+                  <h5 className="font-bold">{getApplicantData(_id).totalNumber}</h5>
                   <p className="text-[14px]">Received</p>
                 </span>
                 <Separator orientation="vertical" className=" h-[45px]" />
                 <span className="flex flex-col flex-grow">
-                  <h5 className="font-bold">{getApplicantData(jobId).pendingNumber || 0}</h5>
+                  <h5 className="font-bold">{getApplicantData(_id).pendingNumber}</h5>
                   <p className="text-[14px]">Pending</p>
                 </span>
                 <Separator orientation="vertical" className=" h-[45px]" />
                 <span className="flex flex-col flex-grow">
-                  <h5 className="font-bold">{getApplicantData(jobId).rejectedNumber || 0}</h5>
+                  <h5 className="font-bold">{getApplicantData(_id).rejectedNumber}</h5>
                   <p className="text-[14px]">Rejected</p>
                 </span>
               </div>
