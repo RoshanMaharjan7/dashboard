@@ -56,15 +56,15 @@ const EditJobForm = ({jobId}:{jobId:string}) => {
     const form = useForm<FormValues>({
     defaultValues: {
       jobTitle: jobData?.data.jobTitle || "",
-      jobCategory: "",
+      jobCategory: jobData?.data.jobCategory || "",
       jobType: jobData?.data.jobType || "",
-      applicationDeadline: "",
+      applicationDeadline: jobData?.data.applicationDeadline || "",
       salaryType: jobData?.data.salaryType || "",
       applicantsType: jobData?.data.applicantsType || "",
-      jobResponsibilities: "",
-      jobRequirements: "",
-      jobRequiredSkills: "",
-      jobWhyUs: "",
+      jobResponsibilities: jobData?.data.jobResponsibilities.join('\n') || "",
+      jobRequirements: jobData?.data.jobRequirements.join('\n') || "",
+      jobRequiredSkills:  jobData?.data.jobRequiredSkills.join('\n') || "",
+      jobWhyUs: jobData?.data.jobWhyUs.join('\n') || "",
       serviceType: jobData?.data.serviceType || "",
     },
   });
@@ -72,15 +72,15 @@ const EditJobForm = ({jobId}:{jobId:string}) => {
   useEffect(() => {
     reset({
       jobTitle: jobData?.data.jobTitle || "",
-      jobCategory: "",
+      jobCategory: jobData?.data.jobCategory || "",
       jobType: jobData?.data.jobType || "",
-      applicationDeadline: "",
+      applicationDeadline: jobData?.data.applicationDeadline || "",
       salaryType: jobData?.data.salaryType || "",
       applicantsType: jobData?.data.applicantsType || "",
-      jobResponsibilities: "",
-      jobRequirements: "",
-      jobRequiredSkills: "",
-      jobWhyUs: "",
+      jobResponsibilities: jobData?.data.jobResponsibilities.join('\n') || "",
+      jobRequirements: jobData?.data.jobRequirements.join('\n') || "",
+      jobRequiredSkills: jobData?.data.jobRequiredSkills.join('\n') || "",
+      jobWhyUs: jobData?.data.jobWhyUs.join('\n') || "",
       serviceType: jobData?.data.serviceType || "",
     });
   }, [jobData, form.reset]);
